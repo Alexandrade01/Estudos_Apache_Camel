@@ -10,6 +10,11 @@ public class IntegracaoArquivo extends RouteBuilder {
 		
 		from("file:{{diretorioEntrada}}?delay=5000")
 		.routeId("Integracao-Arquivo")
+		.process(exchange -> {
+			
+			systemProperty(exchange.getMessage().getBody(String.class));
+			
+		})
 		.log("Processando o arquivo: ${file:onlyname}")
 		//setando o nome do arquivo como (Hora atual)_(Nome do arquivo)
 		.setHeader(FileConstants.FILE_NAME, simple("${date:now:HHmmss}_${file:name}")) // setando nome na entrada
