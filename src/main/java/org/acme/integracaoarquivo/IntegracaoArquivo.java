@@ -18,12 +18,17 @@ public class IntegracaoArquivo extends RouteBuilder {
 		.choice()
 		.when(exchangeProperty("CNPJ").isEqualTo("1"))
 		.to("file:{{diretorioTransportadora1}}?fileName=${date:now:HHmmss}_${file:name}")
+		
 		.when(exchangeProperty("CNPJ").isEqualTo("2"))
-		.setHeader(HttpConstants.HTTP_METHOD, constant("POST"))
-		.setHeader(HttpConstants.HTTP_URI, constant("{{urlApiTransportadora2}}"))
-		.setHeader(HttpConstants.HTTP_PATH, constant("nfes"))
-		.setHeader(HttpConstants.CONTENT_TYPE, constant("application/xml"))
+		// throttle limita o número de mensagens que podem passar por um ponto específico de uma rota em um determinado período de tempo.
+			.throttle(1).timePeriodMillis(5000)
+				.setHeader(HttpConstants.HTTP_METHOD, constant("POST"))
+				.setHeader(HttpConstants.HTTP_URI, constant("{{urlApiTransportadora2}}"))
+				.setHeader(HttpConstants.HTTP_PATH, constant("nfes"))
+				.setHeader(HttpConstants.CONTENT_TYPE, constant("application/xml"))
 		.to("http:servidorTransportadora2")
+		.endChoice()
+		
 		.otherwise()
 		.log("Transportadora não integrada ! ")
 		.end();

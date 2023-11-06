@@ -1,0 +1,3 @@
+org\acme\integracaoarquivo\IntegracaoArquivo.class
+org\acme\integracaoarquivo\MyApplication.class
+org\acme\integracaoarquivo\ServidorHttp.class

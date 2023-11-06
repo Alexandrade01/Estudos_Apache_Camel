@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: org.acme.integracaoarquivo.MyApplicationTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.276 s <<< FAILURE! - in org.acme.integracaoarquivo.MyApplicationTest
+org.acme.integracaoarquivo.MyApplicationTest.should_complete_the_auto_detected_route  Time elapsed: 0.806 s  <<< ERROR!
+org.apache.camel.FailedToStartRouteException: Failed to start route servidor-http because of null
+Caused by: java.lang.IllegalStateException: Cannot find RestConsumerFactory in Registry or as a Component to use
+
