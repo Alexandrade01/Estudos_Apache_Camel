@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="3.18" >
+		<Nfe xmlns="http://www.portalfiscal.inf.br/nfe">
+			<infNFe id="NFe123456" versao="3.18">
+				<transp>
+					<transporta>
+						<CNPJ>2</CNPJ>
+					</transporta>
+				</transp>
+				<infAdic>
+					<obsCont xCampo="PEDIDO2">
+						<xTexto>239256</xTexto>
+					</obsCont>
+				</infAdic>
+			</infNFe>
+		</Nfe>
+</nfeProc>
