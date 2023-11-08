@@ -1,3 +1,5 @@
 org\acme\integracaoarquivo\IntegracaoArquivo.class
+org\acme\integracaoarquivo\IntegracaoTransportadora1.class
 org\acme\integracaoarquivo\MyApplication.class
 org\acme\integracaoarquivo\ServidorHttp.class
+org\acme\integracaoarquivo\IntegracaoTransportadora2.class
